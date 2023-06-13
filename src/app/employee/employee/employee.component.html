@@ -1,0 +1,32 @@
+<div class="card">
+    <h5 class="card-header">Employee</h5>
+    <div class="card-body">
+      <h5 class="card-title">List Employee</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{resultList.status}}</h6>
+      <input class="form-control" type="text" placeholder="Search" [(ngModel)]="searchText">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">employee_name</th>
+            <th scope="col">employee_salary</th>
+            <th scope="col">employee_age</th>
+            <th scope="col">profile_image</th>
+            <th scope="col">employee_anual_salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of resultList.data | search:searchText">
+            <td>{{result.id}}</td>
+            <td>{{result.employee_name}}</td>
+            <td>{{result.employee_salary}}</td>
+            <td>{{result.employee_age}}</td>
+            <td>{{result.profile_image}}</td>
+            <td>{{result.employee_anual_salary}}</td>
+         
+          </tr>
+         </tbody>
+      </table>
+
+    </div>
+  </div>
